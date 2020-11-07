@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "rhynelabkube1-d557"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "rhynelabkube1-d557"
+  template:
+    metadata:
+      labels:
+        app: "rhynelabkube1-d557"
+    spec:
+      containers:
+        - name: "rhynelabkube1-d557"
+          image: "rhynelabkubereg.azurecr.io/rhynelabkube1"
+          ports:
+          - containerPort: 80
